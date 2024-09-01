@@ -11,10 +11,10 @@ import { ProblemEntity } from './form/problem.entity'; // Replace with your actu
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'postgres',
       port: 5432,
-      username: 'myuser', 
-      password: 'mypassword', 
+      username: 'username', 
+      password: 'password', 
       database: 'problem_solver',
       entities: [ProblemEntity],
       synchronize: true, // This is for development. Remove or set to false in production.
