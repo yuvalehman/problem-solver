@@ -17,7 +17,6 @@ import { ProblemEntity } from './form/problem.entity'; // Replace with your actu
       password: 'password', 
       database: 'problem_solver',
       entities: [ProblemEntity],
-      synchronize: true, // This is for development. Remove or set to false in production.
     }),
     FormModule],
   controllers: [AppController],
