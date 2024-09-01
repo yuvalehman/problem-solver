@@ -1,17 +1,20 @@
 // src/components/FormComponent.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import config from '../config';
+
 
 function FormComponent() {
   const [name, setName] = useState('');
   const [problem, setProblem] = useState('');
   const [response, setResponse] = useState(null);
   const [data, setData] = useState([]);
+  const BASE_URL = '${config.API_BASE_URL}/api';
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const result = await axios.post('8080/api/submit', { name, problem });
+      const result = await axios.post('${BASE_URL}/submit', { name, problem });
       setResponse(result.data);
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -19,7 +22,7 @@ function FormComponent() {
   };
   const fetchData = async () => {
     try {
-      const result = await axios.get('8080/api/data');
+      const result = await axios.get('${BASE_URL}/data');
       setData(result.data);
     } catch (error) {
       console.error('Error fetching data:', error);
