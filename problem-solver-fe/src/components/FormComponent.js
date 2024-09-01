@@ -9,12 +9,12 @@ function FormComponent() {
   const [problem, setProblem] = useState('');
   const [response, setResponse] = useState(null);
   const [data, setData] = useState([]);
-  const BASE_URL = '${config.API_BASE_URL}/api';
+  const BASE_URL = `${config.API_BASE_URL}/api`;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const result = await axios.post('${BASE_URL}/submit', { name, problem });
+      const result = await axios.post(`${BASE_URL}/submit`, { name, problem });
       setResponse(result.data);
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -22,7 +22,7 @@ function FormComponent() {
   };
   const fetchData = async () => {
     try {
-      const result = await axios.get('${BASE_URL}/data');
+      const result = await axios.get(`${BASE_URL}/data`);
       setData(result.data);
     } catch (error) {
       console.error('Error fetching data:', error);
