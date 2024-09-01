@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
+    networks:
+      - default
 
   backend:
     build:
@@ -20,6 +22,8 @@ services:
       - DATABASE_NAME=problem_solver
     depends_on:
       - postgres
+    networks:
+      - default
 
   postgres:
     image: postgres:15
