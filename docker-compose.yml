@@ -22,7 +22,7 @@ services:
       - postgres
 
   postgres:
-    image: postgres:latest
+    image: postgres:15
     container_name: postgres_container
     environment:
       POSTGRES_USER: username
